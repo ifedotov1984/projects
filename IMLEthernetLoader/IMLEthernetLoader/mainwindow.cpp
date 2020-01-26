@@ -182,6 +182,11 @@ void MainWindow::on_IMLWriteButton_clicked()
 
         StartTFTPPut();
      }
+     else
+     {
+        QMessageBox::critical(this, tr("Error"),
+                   tr("File to load not selected"));
+     }
 }
 
 void MainWindow::StartTFTPPut()
@@ -370,6 +375,11 @@ void MainWindow::on_BINWriteButton_clicked()
             return;
 
         StartHTTPPut();
+     }
+     else
+     {
+        QMessageBox::critical(this, tr("Error"),
+                  tr("File to load not selected"));
      }
 }
 
