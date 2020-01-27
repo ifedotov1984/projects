@@ -52,7 +52,7 @@ SectionEnd
 
 Section "Uninstall"
 SetShellVarContext all
-StrCpy $0 "IML_Ethernet_Loader.exe"
+StrCpy $0 "IMLEthernetLoader_win32.exe"
 DetailPrint "Killing all processed called '$0'"
 KillProc::KillProcesses
 DetailPrint "Killed $0 processes"
