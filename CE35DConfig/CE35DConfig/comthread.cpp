@@ -205,13 +205,14 @@ void ComPortTransmit::on_ComPortStatusChanged(int status)
 void ComPortWorker::process()
 {
     sp = new QSerialPort(NULL);
+    sp->setPortName(ComPortName);
+    sp->open(QIODevice::ReadWrite);
     sp->setParity(QSerialPort::Parity::EvenParity);
     sp->setBaudRate(COMPORT_BAUDRATE);
     sp->setDataBits(QSerialPort::DataBits::Data8);
     sp->setStopBits(QSerialPort::StopBits::OneStop);
-    sp->setPortName(ComPortName);
     sp->setFlowControl(QSerialPort::FlowControl::NoFlowControl);
-    sp->open(QIODevice::ReadWrite);
+
 
     if(sp->isOpen() == false)
     {
