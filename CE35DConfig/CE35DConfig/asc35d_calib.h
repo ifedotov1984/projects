@@ -57,7 +57,7 @@ private:
     QTimer *pollTimer;
     int pollTimerQuant;
     portFrame wrframe;
-    int8_t scaleVcoeff[2];
+    uint8_t scaleVcoeff[2];
     bool isOpened;
     bool busyWaitMessage();
 
