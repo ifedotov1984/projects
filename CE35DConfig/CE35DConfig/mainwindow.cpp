@@ -665,11 +665,11 @@ void MainWindow::pollTimerTimeout()
                                         {
                                             if(((uint8_t)frame.data.at(i+(svc35d_StatusList.length()-1-k)/8))&(1<<(k%8)))
                                             {
-                                                checkboxStatusColorSet(svc35d_StatusList.at(k), Qt::red);
+                                                checkboxStatusColorSet(svc35d_StatusList.at(k), Qt::blue);
                                             }
                                             else
                                             {
-                                                checkboxStatusColorSet(svc35d_StatusList.at(k), Qt::green);
+                                                checkboxStatusColorSet(svc35d_StatusList.at(k), Qt::yellow);
                                             }
                                         }
                                         connect = true;
