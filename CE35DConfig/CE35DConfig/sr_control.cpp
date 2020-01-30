@@ -161,7 +161,7 @@ void SR_Control::pollTimerTimeout()
                         {
                             uint8_t raddr = ((uint8_t)answer.data.at(i)-0x8B)/3;
                             i++;
-                            if (i <= answer.length)
+                            if (i < answer.length)
                             {
                                 switch ((uint8_t)answer.data.at(i))
                                 {
@@ -182,7 +182,7 @@ void SR_Control::pollTimerTimeout()
                                 connect = true;
                             }
                             i++;
-                            if (i <= answer.length)
+                            if (i < answer.length)
                             {
                                 for (int j = 0; j < 8; j++)
                                 {

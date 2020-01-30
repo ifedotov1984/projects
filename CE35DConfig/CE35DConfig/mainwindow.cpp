@@ -414,7 +414,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x40: //Текущее состояние входов
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         for(int k=0;k<sk35d_StatusList.length();k++)
                                         {
@@ -436,7 +436,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x80: //Настройка типа таймера
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         if (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -461,7 +461,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x81:	//Таймер
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -476,7 +476,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -492,7 +492,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -508,7 +508,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -527,7 +527,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -548,15 +548,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 9) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 10; //в данном модуле 2 нуля подряд
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -564,7 +570,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x88:
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -582,7 +588,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x89:
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -600,7 +606,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x8A:
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -618,7 +624,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x8B:
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sk35d_ParamsEnable->isChecked() == false)
                                         {
@@ -653,7 +659,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x40: //Текущее состояние входов
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         for(int k=0;k<svc35d_StatusList.length();k++)
                                         {
@@ -675,7 +681,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x80: //Настройка типа таймера
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         if (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -700,7 +706,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x81:	//Таймер
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -715,7 +721,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -731,7 +737,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -747,7 +753,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -766,7 +772,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -787,15 +793,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 9) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 10; //в данном модуле 2 нуля подряд
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -803,7 +815,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x88:
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -821,7 +833,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x89:
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->svc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -856,7 +868,7 @@ void MainWindow::pollTimerTimeout()
                             {
                                 case 0x40: //Текущее состояние входов
                                     i+=2;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         for(int k=0;k<sr35d_StatusList.length();k++)
                                         {
@@ -877,7 +889,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0x80: //Настройка тип а выходов
                                     i+=2;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         if  (ui->sr35d_ParamsEnable->isChecked() == false)
                                         {
@@ -910,7 +922,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t raddr = frame.data.at(i)-0x81;
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sr35d_ParamsEnable->isChecked() == false)
                                         {
@@ -925,7 +937,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0xA0: //Адрес
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sr35d_ParamsEnable->isChecked() == false)
                                         {
@@ -940,7 +952,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sr35d_ParamsEnable->isChecked() == false)
                                         {
@@ -956,7 +968,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sr35d_ParamsEnable->isChecked() == false)
                                         {
@@ -975,7 +987,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sr35d_ParamsEnable->isChecked() == false)
                                         {
@@ -996,15 +1008,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 9) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 10; //в данном модуле 2 нуля подряд
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -1019,7 +1037,7 @@ void MainWindow::pollTimerTimeout()
                                     {
                                         uint8_t raddr = ((uint8_t)frame.data.at(i)-0x89)/3;
                                         i += 2;
-                                        if (i <= frame.length)
+                                        if (i < frame.length)
                                         {
                                             if(ui->sr35d_ParamsEnable->isChecked() == false)
                                             {
@@ -1044,7 +1062,7 @@ void MainWindow::pollTimerTimeout()
                                     {
                                         uint8_t raddr = ((uint8_t)frame.data.at(i)-0x8A)/3;
                                         i += 2;
-                                        if (i <= frame.length)
+                                        if (i < frame.length)
                                         {
                                             if(ui->sr35d_ParamsEnable->isChecked() == false)
                                             {
@@ -1085,7 +1103,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x40:
                                     btempstatus = true;
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         tempStatus = frame.data.at(i);
                                         i++;
@@ -1097,7 +1115,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0x41:
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1119,7 +1137,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x42:
                                     bhumstatus = true;
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         humStatus = frame.data.at(i);
                                         i++;
@@ -1131,7 +1149,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0x43:
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1152,7 +1170,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0x44:
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1174,7 +1192,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x45:
                                     bpressurestatus = true;
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         pressureStatus = frame.data.at(i);
                                         i++;
@@ -1186,7 +1204,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0x46:
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1208,7 +1226,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->usrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1224,7 +1242,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->usrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1240,7 +1258,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->usrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1259,7 +1277,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->usrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1279,22 +1297,28 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
                                 }
                                 case 0x4f:
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1341,7 +1365,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x50:
                                     bco2status = true;
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         co2Status = frame.data.at(i);
                                         i++;
@@ -1353,7 +1377,7 @@ void MainWindow::pollTimerTimeout()
 
                                 case 0x51:
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1370,7 +1394,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->csrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1386,7 +1410,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->csrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1402,7 +1426,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->csrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1421,7 +1445,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->csrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -1441,15 +1465,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -1504,7 +1534,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x6A:
                                 case 0x71:
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         str35dtempstatus[((uint8_t)frame.data.at(i - 2) - 0x40) / 7] = frame.data.at(i);
                                         i++;
@@ -1524,7 +1554,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     int raddr = ((uint8_t)frame.data.at(i) - 0x41) / 7;
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1552,7 +1582,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x6C:
                                 case 0x73:
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         str35dhumstatus[((uint8_t)frame.data.at(i - 2) - 0x42) / 7] = frame.data.at(i);
                                         i++;
@@ -1572,7 +1602,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     int raddr = ((uint8_t)frame.data.at(i) - 0x43) / 7;
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1602,7 +1632,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     int raddr = ((uint8_t)frame.data.at(i) - 0x44) / 7;
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1631,7 +1661,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x6F:
                                 case 0x76:
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         str35dpressurestatus[((uint8_t)frame.data.at(i - 2) - 0x45) / 7] = frame.data.at(i);
                                         i++;
@@ -1651,7 +1681,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     int raddr = ((uint8_t)frame.data.at(i) - 0x46) / 7;
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1681,7 +1711,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x84:
                                 case 0x86:
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         str35dco2status[((uint8_t)frame.data.at(i - 2) - 0x78) / 2] = frame.data.at(i);
                                         i++;
@@ -1700,7 +1730,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     int raddr = ((uint8_t)frame.data.at(i) - 0x79) / 2;
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         int itemp;
                                         itemp = (int)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
@@ -1720,7 +1750,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->str35d_ParamsEnable->isChecked() == false)
                                         {
@@ -1736,7 +1766,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->str35d_ParamsEnable->isChecked() == false)
                                         {
@@ -1752,7 +1782,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->str35d_ParamsEnable->isChecked() == false)
                                         {
@@ -1771,7 +1801,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->str35d_ParamsEnable->isChecked() == false)
                                         {
@@ -1791,15 +1821,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -1857,7 +1893,7 @@ void MainWindow::pollTimerTimeout()
                                     QString str = "";
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         switch ((uint8_t)frame.data.at(i))
                                         {
@@ -1884,7 +1920,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 100;
@@ -1905,7 +1941,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         bool vs = false;
                                         if ((uint8_t)frame.data.at(i) == 0x0 && (uint8_t)frame.data.at(i+1) == 0x0)
@@ -1933,7 +1969,7 @@ void MainWindow::pollTimerTimeout()
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     uint8_t indx = (uint8_t)(cn - 0x60);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         double n = qPow(10, vcrs485_template_an[indx]);
@@ -1955,7 +1991,7 @@ void MainWindow::pollTimerTimeout()
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     uint8_t indx = (uint8_t)(cn - 0x10);
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         vcrs485_template_an[indx] = (uint8_t)frame.data.at(i);
                                         if (vcrs485_template_an[indx] > 3) vcrs485_template_an[indx] = 3;
@@ -2001,7 +2037,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->vcrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -2017,7 +2053,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->vcrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -2033,7 +2069,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->vcrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -2052,7 +2088,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->vcrs485_ParamsEnable->isChecked() == false)
                                         {
@@ -2072,15 +2108,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -2118,7 +2160,7 @@ void MainWindow::pollTimerTimeout()
                                     QString str = "";
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         switch ((uint8_t)frame.data.at(i))
                                         {
@@ -2147,7 +2189,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 100;
@@ -2171,7 +2213,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         asc35d_status_cloop[(cn - 0x46)] = (uint8_t)frame.data.at(i);
                                         i++;
@@ -2187,7 +2229,7 @@ void MainWindow::pollTimerTimeout()
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     uint8_t indx = (uint8_t)(cn - 0x60);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         double n = qPow(10, asc35d_template_an[indx]);
@@ -2211,7 +2253,7 @@ void MainWindow::pollTimerTimeout()
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     uint8_t indx = (uint8_t)(cn - 0x62);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         double n = qPow(10, asc35d_template_cloop[indx]);
@@ -2235,7 +2277,7 @@ void MainWindow::pollTimerTimeout()
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     uint8_t indx = (uint8_t)(cn - 0x10);
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         asc35d_template_an[indx] = (uint8_t)frame.data.at(i);
                                         if (asc35d_template_an[indx] > 3)asc35d_template_an[indx] = 3;
@@ -2253,7 +2295,7 @@ void MainWindow::pollTimerTimeout()
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     uint8_t indx = (uint8_t)((uint8_t)(cn - 0x14))/3;
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         asc35d_template_cloop[indx] = (uint8_t)frame.data.at(i);
                                         if (asc35d_template_cloop[indx] > 3)asc35d_template_cloop[indx] = 3;
@@ -2362,7 +2404,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->asc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2378,7 +2420,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->asc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2394,7 +2436,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->asc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2413,7 +2455,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->asc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2433,15 +2475,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -2486,7 +2534,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x40:
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 100;
@@ -2503,7 +2551,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 100;
@@ -2520,7 +2568,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 100;
@@ -2535,7 +2583,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 10;
@@ -2554,7 +2602,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         valt = valt / 100;
@@ -2571,7 +2619,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         valt = valt / 100;
@@ -2597,7 +2645,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         valt = valt / 1000;
@@ -2615,7 +2663,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sva35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2631,7 +2679,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->sva35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2647,7 +2695,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sva35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2666,7 +2714,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->sva35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2686,15 +2734,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;
@@ -2719,7 +2773,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x40:
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         uint16_t valt = ((uint16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         ui->spc35dData->item(0,2)->setText(QString::number(valt));
@@ -2732,7 +2786,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x41:
                                 {
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 100;
@@ -2749,7 +2803,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 1) <= frame.length)
+                                    if ((i + 1) < frame.length)
                                     {
                                         double valt = (double)((int16_t)((uint16_t)((uint8_t)frame.data.at(i))*256+(uint8_t)frame.data.at(i+1)));
                                         valt = valt / 10;
@@ -2787,7 +2841,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         valt = valt / 1000;
@@ -2807,7 +2861,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         ui->spc35dData->item(cn-0x78+28,2)->setText(QString::number(valt, 'f', 3));
@@ -2826,7 +2880,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         valt = valt / 1000;
@@ -2844,7 +2898,7 @@ void MainWindow::pollTimerTimeout()
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
-                                    if ((i + 3) <= frame.length)
+                                    if ((i + 3) < frame.length)
                                     {
                                         double valt = (double)((int32_t)((uint32_t)(uint8_t)frame.data.at(i)*256*256*256+(uint32_t)(uint8_t)frame.data.at(i+1)*256*256+(uint32_t)(uint8_t)frame.data.at(i+2)*256+(uint8_t)(uint8_t)frame.data.at(i+3)));
                                         valt = valt / 1000;
@@ -2860,7 +2914,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA0: //Адрес
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->spc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2876,7 +2930,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA1:	//Скорость
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if (ui->spc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2892,7 +2946,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA2:	//Протокол
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->spc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2911,7 +2965,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA3:	//Бит четности
                                 {
                                     i += 2;
-                                    if (i <= frame.length)
+                                    if (i < frame.length)
                                     {
                                         if  (ui->spc35d_ParamsEnable->isChecked() == false)
                                         {
@@ -2931,15 +2985,21 @@ void MainWindow::pollTimerTimeout()
                                 case 0xA8:
                                 {
                                     i++;
-                                    if ((i + 8) <= frame.length)
+                                    int k=i;
+                                    while (k<frame.length && (uint8_t)frame.data.at(k) != 0x0)
+                                        k++;
+                                    if (k < frame.length)
                                     {
                                         QByteArray sn;
-                                        for (int n=0;n<8;n++)
+                                        for (int n=0;n<k-i;n++)
                                         {
                                             sn.append(frame.data.at(i+n));
                                         }
                                         ui->moduleSN->setText(sn);
-                                        i += 9;
+                                        i =k+1;
+                                        while (i<frame.length && (uint8_t)frame.data.at(i) == 0x0)
+                                            i++;
+                                        connect = true;
                                     }
                                     else { ui->moduleSN->setText(ConstStings::noSN); connect = false; }
                                     break;

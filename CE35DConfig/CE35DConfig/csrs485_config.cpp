@@ -83,7 +83,7 @@ void CSRS485_Config::pollTimerTimeout()
                         case 0xA4:
                         {
                             i++;
-                            if ((i+1) <= answer.length)
+                            if ((i+1) < answer.length)
                             {
                                 if((uint8_t)answer.data.at(i) == 0x0 && (uint8_t)answer.data.at(i+1)==0xf0)
                                 {
@@ -103,7 +103,7 @@ void CSRS485_Config::pollTimerTimeout()
                         case 0xA5:
                         {
                             i++;
-                            if ((i+1) <= answer.length)
+                            if ((i+1) < answer.length)
                             {
                                 if((uint8_t)answer.data.at(i) == 0x0 && (uint8_t)answer.data.at(i+1)==0xf0)
                                 {

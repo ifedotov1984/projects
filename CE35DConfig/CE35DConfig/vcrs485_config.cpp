@@ -92,7 +92,7 @@ void VCRS485_Config::pollTimerTimeout()
                         {
                             uint8_t cn = (uint8_t)answer.data.at(i);
                             i++;
-                            if ((i + 1) <= answer.length)
+                            if ((i + 1) < answer.length)
                             {
                                 uint8_t val=(uint16_t)(uint8_t)answer.data.at(i)*256+(uint16_t)(uint8_t)answer.data.at(i+1);
                                 switch (cn)
@@ -113,7 +113,7 @@ void VCRS485_Config::pollTimerTimeout()
                         {
                             uint8_t cn = (uint8_t)answer.data.at(i);
                             i++;
-                            if ((i + 3) <= answer.length)
+                            if ((i + 3) < answer.length)
                             {
                                 int32_t val = ((int32_t)((uint32_t)(uint8_t)answer.data.at(i)*256*256*256+(uint32_t)(uint8_t)answer.data.at(i+1)*256*256+(uint32_t)(uint8_t)answer.data.at(i+2)*256+(uint8_t)answer.data.at(i+3)));
                                 switch (cn)

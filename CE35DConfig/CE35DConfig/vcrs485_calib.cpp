@@ -82,7 +82,7 @@ void VCRS485_Calib::pollTimerTimeout()
                     {
                         case 0xCE:
                             i++;
-                            if ((i + 1) <= answer.length)
+                            if ((i + 1) < answer.length)
                             {
                                 double val = (double)((int16_t)((uint16_t)(uint8_t)answer.data.at(i)*256+(uint16_t)(uint8_t)answer.data.at(i+1)));
                                 ui->avg->setValue(val/10);
@@ -97,7 +97,7 @@ void VCRS485_Calib::pollTimerTimeout()
                         {
                             uint8_t code = (uint8_t)answer.data.at(i);
                             i+=2;
-                            if (i <= answer.length)
+                            if (i < answer.length)
                             {
                                 switch (code)
                                 {

@@ -83,7 +83,7 @@ void SVA35D_Config::pollTimerTimeout()
                         case 0xB0:
                         {
                             i++;
-                            if ((i + 3) <= answer.length)
+                            if ((i + 3) < answer.length)
                             {
                                 int32_t val = ((int32_t)((uint32_t)(uint8_t)answer.data.at(i)*256*256*256+(uint32_t)(uint8_t)answer.data.at(i+1)*256*256+(uint32_t)(uint8_t)answer.data.at(i+2)*256+(uint8_t)answer.data.at(i+3)));
                                 ui->v_coeff->setValue(val);
@@ -96,7 +96,7 @@ void SVA35D_Config::pollTimerTimeout()
                         case 0xB1:
                         {
                             i++;
-                            if ((i + 3) <= answer.length)
+                            if ((i + 3) < answer.length)
                             {
                                 int32_t val = ((int32_t)((uint32_t)(uint8_t)answer.data.at(i)*256*256*256+(uint32_t)(uint8_t)answer.data.at(i+1)*256*256+(uint32_t)(uint8_t)answer.data.at(i+2)*256+(uint8_t)answer.data.at(i+3)));
                                 ui->i_coeff->setValue(val);
