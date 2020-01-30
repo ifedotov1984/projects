@@ -2,7 +2,7 @@
 !addplugindir "${NSISDIR}\Plugins\x86-unicode"
 
 Name "CE35D_Config"
-OutFile "application\CE35D_Config.exe"
+OutFile "application\CE35D_Config_setup.exe"
 
 RequestExecutionLevel admin
 BrandingText "Intellect module, 2020"

@@ -486,7 +486,10 @@ void MainWindow::onUploadProgressHTTPUpload(qint64 bytesWrite, qint64 bytesTotal
         return;
     ui->labelInfo->setText(tr("--- File Upload ---  Bytes Sent: %1; Bytes Total: %2 ---").arg( bytesWrite).arg( bytesTotal));
     ui->progressBar->setValue(((float)bytesWrite/(float)bytesTotal)*75);
-    webTimer->start(20000);
+    if(bytesTotal>1 && bytesWrite<(bytesTotal-1))
+        webTimer->start(20000);
+    else
+        webTimer->start(120000);
 }
 
 
