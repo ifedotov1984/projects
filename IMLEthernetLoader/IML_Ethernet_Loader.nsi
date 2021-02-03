@@ -1,5 +1,5 @@
+Unicode True
 !include "MUI.nsh"
-!addplugindir "${NSISDIR}\Plugins\x86-unicode"
 
 Name "IML_Ethernet_Loader"
 OutFile "application\IML_Ethernet_Loader_setup.exe"

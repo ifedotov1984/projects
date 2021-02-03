@@ -21,4 +21,4 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-DESTDIR = ../IMLEthernetLoader-bin/usr/bin
+DESTDIR = ../IMLEthernetLoader-bin-x64/usr/bin

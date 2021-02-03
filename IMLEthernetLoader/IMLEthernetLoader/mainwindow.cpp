@@ -489,7 +489,7 @@ void MainWindow::onUploadProgressHTTPUpload(qint64 bytesWrite, qint64 bytesTotal
     if(bytesTotal>1 && bytesWrite<(bytesTotal-1))
         webTimer->start(20000);
     else
-        webTimer->start(120000);
+        webTimer->start(240000);
 }
 
 

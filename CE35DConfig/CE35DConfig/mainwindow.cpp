@@ -15,6 +15,8 @@
 #include <QtMath>
 #include <QTextCodec>
 #include <QStyleFactory>
+#include <QApplication>
+#include <QtWidgets>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,12 +37,12 @@ MainWindow::MainWindow(QWidget *parent)
         {
             QCheckBox *sk35d_Type = new QCheckBox(ui->sk35d_Params);
             sk35d_Type->setObjectName(QString::fromUtf8("sk35d_Type")+QString::number(i));
-            sk35d_Type->setGeometry(QRect(42+25*i, 383, 18, 20));
+            sk35d_Type->setGeometry(QRect(33+20*i, 280, 15, 15));
             sk35d_TypeList.append(sk35d_Type);
 
             QLabel *sk35d_TypeLabel = new QLabel(ui->sk35d_Params);
             sk35d_TypeLabel->setObjectName(QString::fromUtf8("sk35d_TypeLabel")+QString::number(i));
-            sk35d_TypeLabel->setGeometry(QRect(41+25*i, 363, 18, 20));
+            sk35d_TypeLabel->setGeometry(QRect(32+20*i, 265, 15, 15));
             QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy.setHorizontalStretch(0);
             sizePolicy.setVerticalStretch(0);
@@ -55,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
         {
             QCheckBox *sk35d_Status = new QCheckBox(ui->sk35dTab);
             sk35d_Status->setObjectName(QString::fromUtf8("sk35d_Status")+QString::number(i));
-            sk35d_Status->setGeometry(QRect(51+25*i, 587, 18, 20));
+            sk35d_Status->setGeometry(QRect(41+20*i, 380, 15, 15));
             sk35d_Status->setCheckable(false);
             checkboxStatusColorSet(sk35d_Status, Qt::gray);
 
@@ -63,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
 
             QLabel *sk35d_StatusLabel = new QLabel(ui->sk35dTab);
             sk35d_StatusLabel->setObjectName(QString::fromUtf8("sk35d_StatusLabel")+QString::number(i));
-            sk35d_StatusLabel->setGeometry(QRect(50+25*i, 567, 18, 20));
+            sk35d_StatusLabel->setGeometry(QRect(40+20*i, 360, 15, 15));
             QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy.setHorizontalStretch(0);
             sizePolicy.setVerticalStretch(0);
@@ -2616,6 +2618,7 @@ void MainWindow::pollTimerTimeout()
                                 case 0x63:
                                 case 0x64:
                                 case 0x65:
+                                case 0x66:
                                 {
                                     uint8_t cn = (uint8_t)frame.data.at(i);
                                     i++;
