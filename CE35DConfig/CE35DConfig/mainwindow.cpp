@@ -30,6 +30,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->tabWidget->setCurrentIndex(0);
 
+/*#ifndef Q_OS_WIN
+    int h = this->height()-15;
+    this->setMinimumHeight(h);
+    this->setMaximumHeight(h);
+    this->setFixedHeight(h);
+#endif*/
     //SK-35D region
     {
         //SK-35D Type CheckBoxes
@@ -57,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
         {
             QCheckBox *sk35d_Status = new QCheckBox(ui->sk35dTab);
             sk35d_Status->setObjectName(QString::fromUtf8("sk35d_Status")+QString::number(i));
-            sk35d_Status->setGeometry(QRect(41+20*i, 380, 15, 15));
+            sk35d_Status->setGeometry(QRect(41+20*i, 410, 15, 15));
             sk35d_Status->setCheckable(false);
             checkboxStatusColorSet(sk35d_Status, Qt::gray);
 
@@ -65,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
 
             QLabel *sk35d_StatusLabel = new QLabel(ui->sk35dTab);
             sk35d_StatusLabel->setObjectName(QString::fromUtf8("sk35d_StatusLabel")+QString::number(i));
-            sk35d_StatusLabel->setGeometry(QRect(40+20*i, 360, 15, 15));
+            sk35d_StatusLabel->setGeometry(QRect(40+20*i, 395, 15, 15));
             QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy.setHorizontalStretch(0);
             sizePolicy.setVerticalStretch(0);
@@ -87,12 +93,12 @@ MainWindow::MainWindow(QWidget *parent)
         {
             QCheckBox *svc35d_Type = new QCheckBox(ui->svc35d_Params);
             svc35d_Type->setObjectName(QString::fromUtf8("svc35d_Type")+QString::number(i));
-            svc35d_Type->setGeometry(QRect(42+25*i, 318, 18, 20));
+            svc35d_Type->setGeometry(QRect(33+20*i, 280, 15, 15));
             svc35d_TypeList.append(svc35d_Type);
 
             QLabel *svc35d_TypeLabel = new QLabel(ui->svc35d_Params);
             svc35d_TypeLabel->setObjectName(QString::fromUtf8("svc35d_TypeLabel")+QString::number(i));
-            svc35d_TypeLabel->setGeometry(QRect(41+25*i, 298, 18, 20));
+            svc35d_TypeLabel->setGeometry(QRect(32+20*i, 265, 15, 15));
             QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy.setHorizontalStretch(0);
             sizePolicy.setVerticalStretch(0);
@@ -107,7 +113,7 @@ MainWindow::MainWindow(QWidget *parent)
         {
             QCheckBox *svc35d_Status = new QCheckBox(ui->svc35dTab);
             svc35d_Status->setObjectName(QString::fromUtf8("svc35d_Status")+QString::number(i));
-            svc35d_Status->setGeometry(QRect(51+25*i, 587, 18, 20));
+            svc35d_Status->setGeometry(QRect(41+20*i, 410, 15, 15));
             svc35d_Status->setCheckable(false);
             checkboxStatusColorSet(svc35d_Status, Qt::gray);
 
@@ -115,7 +121,7 @@ MainWindow::MainWindow(QWidget *parent)
 
             QLabel *svc35d_StatusLabel = new QLabel(ui->svc35dTab);
             svc35d_StatusLabel->setObjectName(QString::fromUtf8("svc35d_StatusLabel")+QString::number(i));
-            svc35d_StatusLabel->setGeometry(QRect(50+25*i, 567, 18, 20));
+            svc35d_StatusLabel->setGeometry(QRect(40+20*i, 395, 15, 15));
             QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy.setHorizontalStretch(0);
             sizePolicy.setVerticalStretch(0);
@@ -149,36 +155,24 @@ MainWindow::MainWindow(QWidget *parent)
         for(int i=0;i<8;i++)
         {
             QCheckBox *sr35d_Type = new QCheckBox(ui->sr35d_DinParams);
-            sr35d_Type->setObjectName(QString::fromUtf8("svc35d_Type")+QString::number(i));
-            sr35d_Type->setGeometry(QRect(49+50*i, 155, 18, 20));
+            sr35d_Type->setObjectName(QString::fromUtf8("sr35d_Type")+QString::number(i));
+            sr35d_Type->setGeometry(QRect(16+45*i, 90, 15, 15));
             sr35d_TypeList.append(sr35d_Type);
-
-            QLabel *sr35d_TypeLabel = new QLabel(ui->sr35d_DinParams);
-            sr35d_TypeLabel->setObjectName(QString::fromUtf8("svc35d_TypeLabel")+QString::number(i));
-            sr35d_TypeLabel->setGeometry(QRect(48+50*i, 135, 18, 20));
-            QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-            sizePolicy.setHorizontalStretch(0);
-            sizePolicy.setVerticalStretch(0);
-            sizePolicy.setHeightForWidth(sr35d_TypeLabel->sizePolicy().hasHeightForWidth());
-            sr35d_TypeLabel->setSizePolicy(sizePolicy);
-            sr35d_TypeLabel->setLayoutDirection(Qt::RightToLeft);
-            sr35d_TypeLabel->setAlignment(Qt::AlignCenter);
-            sr35d_TypeLabel->setText(QString::number(i+1));
         }
         //SR-35D DINStatus CheckBoxes
         for(int i=0;i<8;i++)
         {
             QCheckBox *sr35d_Status = new QCheckBox(ui->sr35dTab);
-            sr35d_Status->setObjectName(QString::fromUtf8("svc35d_Status")+QString::number(i));
-            sr35d_Status->setGeometry(QRect(64+50*i, 587, 18, 20));
+            sr35d_Status->setObjectName(QString::fromUtf8("sr35d_Status")+QString::number(i));
+            sr35d_Status->setGeometry(QRect(31+45*i, 410, 15, 15));
             sr35d_Status->setCheckable(false);
             checkboxStatusColorSet(sr35d_Status, Qt::gray);
 
             sr35d_StatusList.append(sr35d_Status);
 
             QLabel *sr35d_StatusLabel = new QLabel(ui->sr35dTab);
-            sr35d_StatusLabel->setObjectName(QString::fromUtf8("svc35d_StatusLabel")+QString::number(i));
-            sr35d_StatusLabel->setGeometry(QRect(63+50*i, 567, 18, 20));
+            sr35d_StatusLabel->setObjectName(QString::fromUtf8("sr35d_StatusLabel")+QString::number(i));
+            sr35d_StatusLabel->setGeometry(QRect(30+45*i, 395, 15, 15));
             QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy.setHorizontalStretch(0);
             sizePolicy.setVerticalStretch(0);
@@ -190,14 +184,14 @@ MainWindow::MainWindow(QWidget *parent)
 
             QSpinBox *sr35d_Timer = new QSpinBox(ui->sr35d_DinParams);
             sr35d_Timer->setObjectName(QString::fromUtf8("sr35d_Timer")+QString::number(i));
-            sr35d_Timer->setGeometry(QRect(18+55*i, 62, 45, 26));
+            sr35d_Timer->setGeometry(QRect(5+45*i, 41, 40, 22));
             sr35d_Timer->setMaximum(99);
             sr35d_Timer->setAlignment(Qt::AlignmentFlag::AlignRight);
             sr35d_TimerList.append(sr35d_Timer);
 
             QLabel *sr35d_TimerLabel = new QLabel(ui->sr35d_DinParams);
             sr35d_TimerLabel->setObjectName(QString::fromUtf8("sr35d_TimerLabel")+QString::number(i));
-            sr35d_TimerLabel->setGeometry(QRect(32+55*i, 42, 16, 20));
+            sr35d_TimerLabel->setGeometry(QRect(16+45*i, 28, 15, 15));
             QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
             sizePolicy1.setHorizontalStretch(0);
             sizePolicy1.setVerticalStretch(0);
@@ -315,9 +309,9 @@ MainWindow::MainWindow(QWidget *parent)
     }
     //SVA-35D region
     {
-        ui->sva35dData->setColumnWidth(0, 270);
-        ui->sva35dData->setColumnWidth(1, 80);
-        ui->sva35dData->setColumnWidth(2, 100);
+        ui->sva35dData->setColumnWidth(0, 200);
+        ui->sva35dData->setColumnWidth(1, 55);
+        ui->sva35dData->setColumnWidth(2, 115);
         ui->sva35dData->setSelectionMode(QAbstractItemView::SelectionMode::NoSelection);
         for(int n=0;n<ui->sva35dData->rowCount();n++)
         {
@@ -326,6 +320,9 @@ MainWindow::MainWindow(QWidget *parent)
             item->setTextAlignment(Qt::AlignRight);
             ui->sva35dData->setItem(n, 2, item);
         }
+        QFont f = ui->sva35dData->font();
+        f.setPixelSize(f.pixelSize()*0.95);
+        ui->sva35dData->setFont(f);
         ui->sva35d_Params->setEnabled(false);
         connect(ui->sva35d_Write, SIGNAL(clicked()), this, SLOT(onWriteButton_Click()));
         connect(ui->sva35dModuleN, SIGNAL(valueChanged(int)), this, SLOT(onModuleN_Changed(int)));
@@ -333,9 +330,9 @@ MainWindow::MainWindow(QWidget *parent)
     }
     //SPC-35D region
     {
-        ui->spc35dData->setColumnWidth(0, 270);
-        ui->spc35dData->setColumnWidth(1, 80);
-        ui->spc35dData->setColumnWidth(2, 100);
+        ui->spc35dData->setColumnWidth(0, 200);
+        ui->spc35dData->setColumnWidth(1, 65);
+        ui->spc35dData->setColumnWidth(2, 105);
         ui->spc35dData->setSelectionMode(QAbstractItemView::SelectionMode::NoSelection);
         for(int n=0;n<ui->spc35dData->rowCount();n++)
         {
@@ -344,6 +341,9 @@ MainWindow::MainWindow(QWidget *parent)
             item->setTextAlignment(Qt::AlignRight);
             ui->spc35dData->setItem(n, 2, item);
         }
+        QFont f = ui->spc35dData->font();
+        f.setPixelSize(f.pixelSize()*0.95);
+        ui->spc35dData->setFont(f);
         ui->spc35d_Params->setEnabled(false);
         connect(ui->spc35d_Write, SIGNAL(clicked()), this, SLOT(onWriteButton_Click()));
         connect(ui->spc35dModuleN, SIGNAL(valueChanged(int)), this, SLOT(onModuleN_Changed(int)));
@@ -1504,6 +1504,10 @@ void MainWindow::pollTimerTimeout()
                             else if (co2Status == 2)
                             {
                                 ui->csrs485_Heat->setVisible(true);
+                                QFont f=ui->csrs485_Heat->font();
+                                f.setWeight(QFont::Bold);
+                                ui->csrs485_Heat->setFont(f);
+                                break;
                             }
                             else
                             {
@@ -1957,8 +1961,22 @@ void MainWindow::pollTimerTimeout()
                                         }
                                         switch (cn)
                                         {
-                                            case 0x44: ui->vcrs485_Over->setVisible(vs); break;
-                                            case 0x45:ui->vcrs485_Over_2->setVisible(vs); break;
+                                            case 0x44:
+                                            {
+                                                ui->vcrs485_Over->setVisible(vs);
+                                                QFont f=ui->vcrs485_Over->font();
+                                                f.setWeight(QFont::Bold);
+                                                ui->vcrs485_Over->setFont(f);
+                                                break;
+                                            }
+                                            case 0x45:
+                                            {
+                                                ui->vcrs485_Over_2->setVisible(vs);
+                                                QFont f=ui->vcrs485_Over_2->font();
+                                                f.setWeight(QFont::Bold);
+                                                ui->vcrs485_Over_2->setFont(f);
+                                                break;
+                                            }
                                         }
                                         i += 2;
                                     }
@@ -4342,13 +4360,13 @@ void MainWindow::onMenu_PortClose()
 void MainWindow::on_sr35d_ConfigButton_clicked()
 {
 
-    if(ModuleConnected == false)
+ /*   if(ModuleConnected == false)
     {
         QMessageBox::information(NULL, tr("Внимание"),
                                tr("Отсутствует соединение с модулем"));
         return;
     }
-
+*/
     SR_Control *sr = new SR_Control(this);
     sr->SR_DataLoad(&comP, &pollRequestFlag, ModuleAddress);
 }
@@ -4448,7 +4466,7 @@ void MainWindow::on_sva35d_Config_clicked()
 
 void MainWindow::on_sva35d_Caibrate_clicked()
 {
-    if(ModuleConnected == false)
+  if(ModuleConnected == false)
     {
         QMessageBox::information(NULL, tr("Внимание"),
                                tr("Отсутствует соединение с модудем"));

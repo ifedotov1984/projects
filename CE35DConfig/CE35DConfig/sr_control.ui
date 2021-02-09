@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>790</width>
-    <height>520</height>
+    <width>570</width>
+    <height>390</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>790</width>
-    <height>520</height>
+    <width>570</width>
+    <height>390</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>790</width>
-    <height>520</height>
+    <width>570</width>
+    <height>390</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,11 +28,17 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>675</x>
-     <y>480</y>
-     <width>100</width>
-     <height>30</height>
+     <x>465</x>
+     <y>357</y>
+     <width>90</width>
+     <height>26</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Назад</string>
@@ -41,11 +47,17 @@
   <widget class="QPushButton" name="Write">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>480</y>
-     <width>100</width>
-     <height>30</height>
+     <x>365</x>
+     <y>357</y>
+     <width>90</width>
+     <height>26</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Записать</string>

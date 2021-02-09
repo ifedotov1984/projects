@@ -32,8 +32,8 @@
    <string>IML Ethernet Loader</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>IMLEthernetLoader.png</normaloff>IMLEthernetLoader.png</iconset>
+   <iconset resource="res.qrc">
+    <normaloff>:/IMLEthernetLoader.svg</normaloff>:/IMLEthernetLoader.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="IMLOpenButton">
@@ -289,11 +289,13 @@
      <x>0</x>
      <y>0</y>
      <width>520</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

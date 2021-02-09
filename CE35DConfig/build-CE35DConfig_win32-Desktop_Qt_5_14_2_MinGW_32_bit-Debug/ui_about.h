@@ -29,10 +29,17 @@ public:
     {
         if (about->objectName().isEmpty())
             about->setObjectName(QString::fromUtf8("about"));
-        about->resize(330, 132);
+        about->resize(350, 130);
+        about->setMinimumSize(QSize(350, 130));
+        about->setMaximumSize(QSize(350, 130));
         label_2 = new QLabel(about);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(0, 13, 331, 41));
+        label_2->setGeometry(QRect(10, 10, 331, 41));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy);
         QFont font;
         font.setPointSize(9);
         font.setBold(true);
@@ -43,6 +50,8 @@ public:
         label_4 = new QLabel(about);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(90, 47, 141, 31));
+        sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy);
         QFont font1;
         font1.setPointSize(9);
         font1.setBold(false);
@@ -52,13 +61,17 @@ public:
         label_4->setWordWrap(true);
         label_5 = new QLabel(about);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(10, 88, 231, 31));
+        label_5->setGeometry(QRect(10, 88, 181, 31));
+        sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy);
         label_5->setFont(font1);
         label_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         label_5->setWordWrap(true);
         pushButton = new QPushButton(about);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(230, 90, 90, 30));
+        pushButton->setGeometry(QRect(252, 96, 90, 26));
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
 
         retranslateUi(about);
 

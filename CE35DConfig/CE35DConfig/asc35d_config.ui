@@ -6,21 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>975</width>
-    <height>540</height>
+    <width>724</width>
+    <height>433</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>724</width>
+    <height>433</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>724</width>
+    <height>433</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Настройка ASC-35D</string>
   </property>
   <widget class="QGroupBox" name="cloop_1">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>5</x>
      <y>0</y>
-     <width>470</width>
-     <height>160</height>
+     <width>352</width>
+     <height>132</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Датчик 4/20 мА  №1</string>
@@ -29,15 +47,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>191</width>
-      <height>25</height>
+      <y>16</y>
+      <width>141</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -46,16 +65,17 @@
    <widget class="QSpinBox" name="i_low_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -73,16 +93,17 @@
    <widget class="QSpinBox" name="i_high_1">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -100,16 +121,17 @@
    <widget class="QSpinBox" name="p_high_1">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -128,15 +150,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
-      <width>191</width>
-      <height>25</height>
+      <y>46</y>
+      <width>140</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение параметра</string>
@@ -145,16 +168,17 @@
    <widget class="QSpinBox" name="p_low_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -173,15 +197,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
-      <width>191</width>
-      <height>25</height>
+      <y>76</y>
+      <width>151</width>
+      <height>18</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Размерность параметра</string>
@@ -190,11 +215,17 @@
    <widget class="QPushButton" name="i_Write_1">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>120</y>
-      <width>95</width>
-      <height>30</height>
+      <x>255</x>
+      <y>99</y>
+      <width>90</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Записать</string>
@@ -203,11 +234,17 @@
    <widget class="QSpinBox" name="i_dec_1">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>122</y>
+      <x>205</x>
+      <y>101</y>
       <width>40</width>
-      <height>26</height>
+      <height>22</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -223,15 +260,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>122</y>
-      <width>191</width>
-      <height>25</height>
+      <y>101</y>
+      <width>150</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Десятичный знак</string>
@@ -240,11 +278,17 @@
    <widget class="QLineEdit" name="i_dim_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>76</y>
+      <width>90</width>
+      <height>18</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="maxLength">
      <number>10</number>
@@ -254,11 +298,17 @@
   <widget class="QGroupBox" name="ank_1">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>330</y>
-     <width>470</width>
-     <height>160</height>
+     <x>5</x>
+     <y>264</y>
+     <width>352</width>
+     <height>132</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Датчик AnK №1</string>
@@ -267,15 +317,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>191</width>
-      <height>25</height>
+      <y>16</y>
+      <width>151</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение коэффициента K</string>
@@ -284,16 +335,17 @@
    <widget class="QSpinBox" name="koeff_K_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -311,16 +363,17 @@
    <widget class="QSpinBox" name="koeff_Z_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -339,15 +392,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
-      <width>191</width>
-      <height>25</height>
+      <y>46</y>
+      <width>151</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение коэффициента Z</string>
@@ -357,15 +411,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
+      <y>76</y>
       <width>191</width>
-      <height>25</height>
+      <height>18</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Размерность параметра</string>
@@ -374,11 +429,17 @@
    <widget class="QLineEdit" name="dim_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>76</y>
+      <width>90</width>
+      <height>18</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="maxLength">
      <number>10</number>
@@ -388,15 +449,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>122</y>
-      <width>191</width>
-      <height>25</height>
+      <y>101</y>
+      <width>131</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Десятичный знак</string>
@@ -405,11 +467,17 @@
    <widget class="QSpinBox" name="dec_1">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>122</y>
+      <x>205</x>
+      <y>101</y>
       <width>40</width>
-      <height>26</height>
+      <height>22</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -424,11 +492,17 @@
    <widget class="QPushButton" name="dWrite_1">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>120</y>
-      <width>95</width>
-      <height>30</height>
+      <x>255</x>
+      <y>99</y>
+      <width>90</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Записать</string>
@@ -438,11 +512,17 @@
   <widget class="QGroupBox" name="cloop_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>165</y>
-     <width>470</width>
-     <height>160</height>
+     <x>5</x>
+     <y>132</y>
+     <width>352</width>
+     <height>132</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Датчик 4/20 мА  №2</string>
@@ -451,15 +531,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>191</width>
-      <height>25</height>
+      <y>16</y>
+      <width>141</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -468,16 +549,17 @@
    <widget class="QSpinBox" name="i_low_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -495,16 +577,17 @@
    <widget class="QSpinBox" name="i_high_2">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -522,16 +605,17 @@
    <widget class="QSpinBox" name="p_high_2">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -550,15 +634,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
-      <width>191</width>
-      <height>25</height>
+      <y>46</y>
+      <width>140</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -567,16 +652,17 @@
    <widget class="QSpinBox" name="p_low_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>55</y>
-      <width>120</width>
-      <height>25</height>
+      <x>155</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -595,15 +681,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
-      <width>191</width>
-      <height>25</height>
+      <y>76</y>
+      <width>151</width>
+      <height>18</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Размерность параметра</string>
@@ -612,11 +699,17 @@
    <widget class="QPushButton" name="i_Write_2">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>120</y>
-      <width>95</width>
-      <height>30</height>
+      <x>255</x>
+      <y>99</y>
+      <width>90</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Записать</string>
@@ -625,11 +718,17 @@
    <widget class="QSpinBox" name="i_dec_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>122</y>
+      <x>205</x>
+      <y>101</y>
       <width>40</width>
-      <height>26</height>
+      <height>22</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -645,15 +744,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>122</y>
-      <width>191</width>
-      <height>25</height>
+      <y>101</y>
+      <width>150</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Десятичный знак</string>
@@ -662,11 +762,17 @@
    <widget class="QLineEdit" name="i_dim_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>76</y>
+      <width>90</width>
+      <height>18</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="maxLength">
      <number>10</number>
@@ -676,11 +782,17 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>861</x>
-     <y>500</y>
-     <width>95</width>
-     <height>30</height>
+     <x>622</x>
+     <y>400</y>
+     <width>90</width>
+     <height>26</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Назад</string>
@@ -689,11 +801,17 @@
   <widget class="QGroupBox" name="cloop_3">
    <property name="geometry">
     <rect>
-     <x>495</x>
+     <x>367</x>
      <y>0</y>
-     <width>470</width>
-     <height>160</height>
+     <width>352</width>
+     <height>132</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Датчик 4/20 мА  №3</string>
@@ -702,15 +820,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>191</width>
-      <height>25</height>
+      <y>16</y>
+      <width>151</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -719,16 +838,17 @@
    <widget class="QSpinBox" name="i_low_3">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -746,16 +866,17 @@
    <widget class="QSpinBox" name="i_high_3">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -773,16 +894,17 @@
    <widget class="QSpinBox" name="p_high_3">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -801,15 +923,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
-      <width>191</width>
-      <height>25</height>
+      <y>46</y>
+      <width>151</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -818,16 +941,17 @@
    <widget class="QSpinBox" name="p_low_3">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -846,15 +970,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
-      <width>191</width>
-      <height>25</height>
+      <y>76</y>
+      <width>141</width>
+      <height>18</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Размерность параметра</string>
@@ -863,11 +988,17 @@
    <widget class="QPushButton" name="i_Write_3">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>120</y>
-      <width>95</width>
-      <height>30</height>
+      <x>255</x>
+      <y>90</y>
+      <width>90</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Записать</string>
@@ -876,11 +1007,17 @@
    <widget class="QSpinBox" name="i_dec_3">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>122</y>
+      <x>205</x>
+      <y>101</y>
       <width>40</width>
-      <height>26</height>
+      <height>22</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -896,15 +1033,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>122</y>
+      <y>101</y>
       <width>191</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Десятичный знак</string>
@@ -913,11 +1051,17 @@
    <widget class="QLineEdit" name="i_dim_3">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>76</y>
+      <width>90</width>
+      <height>18</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="maxLength">
      <number>10</number>
@@ -927,11 +1071,17 @@
   <widget class="QGroupBox" name="cloop_4">
    <property name="geometry">
     <rect>
-     <x>495</x>
-     <y>165</y>
-     <width>470</width>
-     <height>160</height>
+     <x>367</x>
+     <y>132</y>
+     <width>352</width>
+     <height>132</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Датчик 4/20 мА  №4</string>
@@ -940,15 +1090,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
+      <y>16</y>
       <width>191</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -957,16 +1108,17 @@
    <widget class="QSpinBox" name="i_low_4">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -984,16 +1136,17 @@
    <widget class="QSpinBox" name="i_high_4">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1011,16 +1164,17 @@
    <widget class="QSpinBox" name="p_high_4">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>255</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1039,15 +1193,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
+      <y>46</y>
       <width>191</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение тока датчика, мА</string>
@@ -1056,16 +1211,17 @@
    <widget class="QSpinBox" name="p_low_4">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1084,15 +1240,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
-      <width>191</width>
-      <height>25</height>
+      <y>76</y>
+      <width>151</width>
+      <height>18</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Размерность параметра</string>
@@ -1101,11 +1258,17 @@
    <widget class="QPushButton" name="i_Write_4">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>120</y>
-      <width>95</width>
-      <height>30</height>
+      <x>255</x>
+      <y>99</y>
+      <width>90</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Записать</string>
@@ -1114,11 +1277,17 @@
    <widget class="QSpinBox" name="i_dec_4">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>122</y>
+      <x>205</x>
+      <y>101</y>
       <width>40</width>
-      <height>26</height>
+      <height>22</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1134,15 +1303,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>122</y>
-      <width>191</width>
-      <height>25</height>
+      <y>101</y>
+      <width>121</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Десятичный знак</string>
@@ -1151,11 +1321,17 @@
    <widget class="QLineEdit" name="i_dim_4">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>76</y>
+      <width>90</width>
+      <height>18</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="maxLength">
      <number>10</number>
@@ -1165,11 +1341,17 @@
   <widget class="QGroupBox" name="ank_2">
    <property name="geometry">
     <rect>
-     <x>495</x>
-     <y>330</y>
-     <width>470</width>
-     <height>160</height>
+     <x>367</x>
+     <y>264</y>
+     <width>352</width>
+     <height>132</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Датчик AnK №2</string>
@@ -1178,15 +1360,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>191</width>
-      <height>25</height>
+      <y>16</y>
+      <width>141</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение коэффициента K</string>
@@ -1195,16 +1378,17 @@
    <widget class="QSpinBox" name="koeff_K_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>16</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1222,16 +1406,17 @@
    <widget class="QSpinBox" name="koeff_Z_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>55</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>46</y>
+      <width>90</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1250,15 +1435,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
-      <width>191</width>
-      <height>25</height>
+      <y>46</y>
+      <width>161</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Значение коэффициента Z</string>
@@ -1268,15 +1454,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
-      <width>191</width>
-      <height>25</height>
+      <y>76</y>
+      <width>151</width>
+      <height>18</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Размерность параметра</string>
@@ -1285,11 +1472,17 @@
    <widget class="QLineEdit" name="dim_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
-      <width>120</width>
-      <height>26</height>
+      <x>155</x>
+      <y>76</y>
+      <width>90</width>
+      <height>18</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="maxLength">
      <number>10</number>
@@ -1299,15 +1492,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>122</y>
+      <y>101</y>
       <width>191</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Десятичный знак</string>
@@ -1316,11 +1510,17 @@
    <widget class="QSpinBox" name="dec_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>122</y>
+      <x>205</x>
+      <y>101</y>
       <width>40</width>
-      <height>26</height>
+      <height>22</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1335,11 +1535,17 @@
    <widget class="QPushButton" name="dWrite_2">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>120</y>
-      <width>95</width>
-      <height>30</height>
+      <x>255</x>
+      <y>99</y>
+      <width>90</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Записать</string>

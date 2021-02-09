@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 
     qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "0");
     qputenv("QT_SCREEN_SCALE_FACTORS", QString::number(scale, 'f', 3).toLocal8Bit());
+#else
+    qputenv("QT_SCREEN_SCALE_FACTORS", "1.1");
 #endif
 
     QApplication a(argc, argv);

@@ -33,41 +33,53 @@ public:
     {
         if (SVA35D_Config->objectName().isEmpty())
             SVA35D_Config->setObjectName(QString::fromUtf8("SVA35D_Config"));
-        SVA35D_Config->resize(520, 155);
+        SVA35D_Config->resize(418, 103);
+        SVA35D_Config->setMinimumSize(QSize(418, 103));
+        SVA35D_Config->setMaximumSize(QSize(418, 103));
         label_5 = new QLabel(SVA35D_Config);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(10, 12, 291, 26));
-        QFont font;
-        font.setPointSize(9);
-        label_5->setFont(font);
+        label_5->setGeometry(QRect(10, 12, 241, 22));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy);
         vWrite = new QPushButton(SVA35D_Config);
         vWrite->setObjectName(QString::fromUtf8("vWrite"));
-        vWrite->setGeometry(QRect(420, 10, 90, 30));
-        vWrite->setFont(font);
+        vWrite->setGeometry(QRect(330, 10, 80, 26));
+        sizePolicy.setHeightForWidth(vWrite->sizePolicy().hasHeightForWidth());
+        vWrite->setSizePolicy(sizePolicy);
         v_coeff = new QSpinBox(SVA35D_Config);
         v_coeff->setObjectName(QString::fromUtf8("v_coeff"));
-        v_coeff->setGeometry(QRect(300, 12, 100, 26));
+        v_coeff->setGeometry(QRect(240, 12, 80, 22));
+        sizePolicy.setHeightForWidth(v_coeff->sizePolicy().hasHeightForWidth());
+        v_coeff->setSizePolicy(sizePolicy);
         v_coeff->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         v_coeff->setMinimum(0);
         v_coeff->setMaximum(1000000000);
         iWrite = new QPushButton(SVA35D_Config);
         iWrite->setObjectName(QString::fromUtf8("iWrite"));
-        iWrite->setGeometry(QRect(420, 60, 90, 30));
-        iWrite->setFont(font);
+        iWrite->setGeometry(QRect(330, 40, 80, 26));
+        sizePolicy.setHeightForWidth(iWrite->sizePolicy().hasHeightForWidth());
+        iWrite->setSizePolicy(sizePolicy);
         label_6 = new QLabel(SVA35D_Config);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(10, 62, 291, 26));
-        label_6->setFont(font);
+        label_6->setGeometry(QRect(10, 42, 231, 22));
+        sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
+        label_6->setSizePolicy(sizePolicy);
         i_coeff = new QSpinBox(SVA35D_Config);
         i_coeff->setObjectName(QString::fromUtf8("i_coeff"));
-        i_coeff->setGeometry(QRect(300, 62, 100, 26));
+        i_coeff->setGeometry(QRect(240, 42, 80, 22));
+        sizePolicy.setHeightForWidth(i_coeff->sizePolicy().hasHeightForWidth());
+        i_coeff->setSizePolicy(sizePolicy);
         i_coeff->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         i_coeff->setMinimum(0);
         i_coeff->setMaximum(1000000000);
         Cancel = new QPushButton(SVA35D_Config);
         Cancel->setObjectName(QString::fromUtf8("Cancel"));
-        Cancel->setGeometry(QRect(420, 110, 90, 30));
-        Cancel->setFont(font);
+        Cancel->setGeometry(QRect(330, 70, 80, 26));
+        sizePolicy.setHeightForWidth(Cancel->sizePolicy().hasHeightForWidth());
+        Cancel->setSizePolicy(sizePolicy);
 
         retranslateUi(SVA35D_Config);
 
@@ -76,7 +88,7 @@ public:
 
     void retranslateUi(QDialog *SVA35D_Config)
     {
-        SVA35D_Config->setWindowTitle(QCoreApplication::translate("SVA35D_Config", "Dialog", nullptr));
+        SVA35D_Config->setWindowTitle(QCoreApplication::translate("SVA35D_Config", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\260 SVA-35D", nullptr));
         label_5->setText(QCoreApplication::translate("SVA35D_Config", "\320\232\320\276\321\215\321\204\321\204\320\270\321\206\320\270\320\265\320\275\321\202 \320\277\320\265\321\200\320\265\320\264\320\260\321\207\320\270 \320\277\320\276 \320\275\320\260\320\277\321\200\321\217\320\266\320\265\320\275\320\270\321\216", nullptr));
         vWrite->setText(QCoreApplication::translate("SVA35D_Config", "\320\227\320\260\320\277\320\270\321\201\320\260\321\202\321\214", nullptr));
         iWrite->setText(QCoreApplication::translate("SVA35D_Config", "\320\227\320\260\320\277\320\270\321\201\320\260\321\202\321\214", nullptr));

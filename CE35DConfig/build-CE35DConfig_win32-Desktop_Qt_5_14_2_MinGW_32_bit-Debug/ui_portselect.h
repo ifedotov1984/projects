@@ -31,26 +31,34 @@ public:
         if (PortSelect->objectName().isEmpty())
             PortSelect->setObjectName(QString::fromUtf8("PortSelect"));
         PortSelect->setWindowModality(Qt::WindowModal);
-        PortSelect->resize(220, 120);
+        PortSelect->resize(210, 93);
+        PortSelect->setMinimumSize(QSize(210, 93));
+        PortSelect->setMaximumSize(QSize(210, 93));
         PortSelect->setContextMenuPolicy(Qt::NoContextMenu);
         PortSelect->setModal(true);
         label = new QLabel(PortSelect);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(10, 20, 71, 26));
-        QFont font;
-        font.setPointSize(9);
-        label->setFont(font);
+        label->setGeometry(QRect(10, 15, 71, 20));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy);
         comboBox = new QComboBox(PortSelect);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(100, 20, 110, 26));
+        comboBox->setGeometry(QRect(90, 15, 110, 20));
+        sizePolicy.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
+        comboBox->setSizePolicy(sizePolicy);
         Submit = new QPushButton(PortSelect);
         Submit->setObjectName(QString::fromUtf8("Submit"));
-        Submit->setGeometry(QRect(120, 80, 90, 28));
-        Submit->setFont(font);
+        Submit->setGeometry(QRect(110, 60, 90, 26));
+        sizePolicy.setHeightForWidth(Submit->sizePolicy().hasHeightForWidth());
+        Submit->setSizePolicy(sizePolicy);
         Cancel = new QPushButton(PortSelect);
         Cancel->setObjectName(QString::fromUtf8("Cancel"));
-        Cancel->setGeometry(QRect(10, 80, 90, 28));
-        Cancel->setFont(font);
+        Cancel->setGeometry(QRect(10, 60, 90, 26));
+        sizePolicy.setHeightForWidth(Cancel->sizePolicy().hasHeightForWidth());
+        Cancel->setSizePolicy(sizePolicy);
 
         retranslateUi(PortSelect);
 

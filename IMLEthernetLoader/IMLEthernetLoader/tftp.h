@@ -14,7 +14,7 @@
 #define OPCODE_ACK (4)
 #define OPCODE_ERR (5)
 
-#define TFTP_PORT (55255)//(69)
+#define TFTP_PORT (69)
 
 #define BLOCKSIZE (512)
 #define DATA_PACKET_HEADER_LEN (4)

@@ -6,26 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>440</width>
-    <height>155</height>
+    <width>357</width>
+    <height>103</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>357</width>
+    <height>103</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>357</width>
+    <height>103</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Настройка SPC-35D</string>
   </property>
   <widget class="QPushButton" name="addrWrite">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>260</x>
      <y>10</y>
      <width>90</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Записать</string>
@@ -35,15 +48,16 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>12</y>
+     <y>14</y>
      <width>121</width>
-     <height>26</height>
+     <height>18</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Адрес счетчика</string>
@@ -52,16 +66,17 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>110</y>
+     <x>260</x>
+     <y>70</y>
      <width>90</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Назад</string>
@@ -70,16 +85,17 @@
   <widget class="QLineEdit" name="addr">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>12</y>
-     <width>180</width>
-     <height>26</height>
+     <x>105</x>
+     <y>14</y>
+     <width>145</width>
+     <height>18</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string/>
@@ -92,15 +108,16 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>62</y>
+     <y>44</y>
      <width>121</width>
-     <height>26</height>
+     <height>18</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Пароль счетчика</string>
@@ -109,11 +126,17 @@
   <widget class="QLineEdit" name="passw">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>62</y>
-     <width>180</width>
-     <height>26</height>
+     <x>105</x>
+     <y>44</y>
+     <width>145</width>
+     <height>18</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="maxLength">
     <number>20</number>
@@ -122,16 +145,17 @@
   <widget class="QPushButton" name="passwWrite">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>60</y>
+     <x>260</x>
+     <y>40</y>
      <width>90</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Записать</string>

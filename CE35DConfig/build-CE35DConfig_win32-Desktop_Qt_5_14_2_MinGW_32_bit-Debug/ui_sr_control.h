@@ -26,15 +26,22 @@ public:
     {
         if (SR_Control->objectName().isEmpty())
             SR_Control->setObjectName(QString::fromUtf8("SR_Control"));
-        SR_Control->resize(790, 520);
-        SR_Control->setMinimumSize(QSize(790, 520));
-        SR_Control->setMaximumSize(QSize(790, 520));
+        SR_Control->resize(570, 390);
+        SR_Control->setMinimumSize(QSize(570, 390));
+        SR_Control->setMaximumSize(QSize(570, 390));
         Cancel = new QPushButton(SR_Control);
         Cancel->setObjectName(QString::fromUtf8("Cancel"));
-        Cancel->setGeometry(QRect(675, 480, 100, 30));
+        Cancel->setGeometry(QRect(465, 357, 90, 26));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(Cancel->sizePolicy().hasHeightForWidth());
+        Cancel->setSizePolicy(sizePolicy);
         Write = new QPushButton(SR_Control);
         Write->setObjectName(QString::fromUtf8("Write"));
-        Write->setGeometry(QRect(560, 480, 100, 30));
+        Write->setGeometry(QRect(365, 357, 90, 26));
+        sizePolicy.setHeightForWidth(Write->sizePolicy().hasHeightForWidth());
+        Write->setSizePolicy(sizePolicy);
 
         retranslateUi(SR_Control);
 

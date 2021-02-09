@@ -6,26 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>149</height>
+    <width>375</width>
+    <height>103</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>375</width>
+    <height>103</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>375</width>
+    <height>103</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Настройки CS-RS485</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>15</y>
+     <y>13</y>
      <width>191</width>
-     <height>30</height>
+     <height>20</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Диапазон измерения, ppm</string>
@@ -35,15 +48,16 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>65</y>
+     <y>45</y>
      <width>191</width>
-     <height>16</height>
+     <height>20</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Автоматическая коррекция</string>
@@ -52,11 +66,17 @@
   <widget class="QComboBox" name="diap">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>15</y>
-     <width>111</width>
-     <height>30</height>
+     <x>170</x>
+     <y>13</y>
+     <width>90</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <item>
     <property name="text">
@@ -72,11 +92,17 @@
   <widget class="QPushButton" name="dWrite">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>15</y>
-     <width>95</width>
-     <height>30</height>
+     <x>275</x>
+     <y>10</y>
+     <width>90</width>
+     <height>26</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Записать</string>
@@ -85,11 +111,17 @@
   <widget class="QCheckBox" name="correct">
    <property name="geometry">
     <rect>
-     <x>303</x>
-     <y>65</y>
-     <width>18</width>
-     <height>20</height>
+     <x>247</x>
+     <y>45</y>
+     <width>15</width>
+     <height>15</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string/>
@@ -98,11 +130,17 @@
   <widget class="QPushButton" name="dWrite_2">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>60</y>
-     <width>95</width>
-     <height>30</height>
+     <x>275</x>
+     <y>40</y>
+     <width>90</width>
+     <height>26</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Записать</string>
@@ -111,11 +149,17 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>105</y>
-     <width>95</width>
-     <height>30</height>
+     <x>275</x>
+     <y>70</y>
+     <width>90</width>
+     <height>26</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>Назад</string>

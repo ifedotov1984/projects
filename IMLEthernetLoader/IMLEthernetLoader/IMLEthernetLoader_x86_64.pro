@@ -22,3 +22,6 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 DESTDIR = ../IMLEthernetLoader-bin-x64/usr/bin
+
+RESOURCES += \
+    res.qrc

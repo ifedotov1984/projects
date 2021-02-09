@@ -13,10 +13,10 @@ SR_Control::SR_Control(QWidget *parent) :
     for (int i=0;i<6;i++)
     {
         QGroupBox *groupbox = new QGroupBox(this);
-        groupbox->setObjectName(QString::fromUtf8("sk35d_Params"));
-        groupbox->setGeometry(QRect(10, 5+i*78, 770, 75));
+        groupbox->setObjectName(QString::fromUtf8("sr35d_Params"));
+        groupbox->setGeometry(QRect(5, 3+i*58, 560, 58));
         QString title = "Релейный выход "+QString::number(i+1);
-        groupbox->setTitle(QCoreApplication::translate("MainWindow", title.toUtf8(), nullptr));
+        groupbox->setTitle(QCoreApplication::translate("SR_Control", title.toUtf8(), nullptr));
 
         QComboBox *sr35d_relay = new QComboBox(groupbox);
         sr35d_relay->addItem(QString());
@@ -24,7 +24,7 @@ SR_Control::SR_Control(QWidget *parent) :
         sr35d_relay->addItem(QString());
         sr35d_relay->addItem(QString());
         sr35d_relay->setObjectName(QString::fromUtf8("sr35d_relay"));
-        sr35d_relay->setGeometry(QRect(160, 15, 600, 25));
+        sr35d_relay->setGeometry(QRect(120, 15, 430, 20));
         title = "Отключено";
         sr35d_relay->setItemText(0, QCoreApplication::translate("SR_Control", title.toUtf8(), nullptr));
         title = "Смена состояния выхода при аварии дискретного входа";
@@ -37,46 +37,46 @@ SR_Control::SR_Control(QWidget *parent) :
 
         QLabel *label_relay = new QLabel(groupbox);
         label_relay->setObjectName(QString::fromUtf8("label_relay")+QString::number(i));
-        label_relay->setGeometry(QRect(10, 17, 150, 20));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        label_relay->setGeometry(QRect(10, 15, 120, 20));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(label_relay->sizePolicy().hasHeightForWidth());
         label_relay->setSizePolicy(sizePolicy);
         label_relay->setLayoutDirection(Qt::RightToLeft);
-        label_relay->setAlignment(Qt::AlignLeft);
+        label_relay->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
         title = "Способ управления";
         label_relay->setText(QCoreApplication::translate("SR_Control", title.toUtf8(), nullptr));
 
         QLabel *label_din = new QLabel(groupbox);
         label_din->setObjectName(QString::fromUtf8("label_relay")+QString::number(i));
-        label_din->setGeometry(QRect(10, 47, 210, 20));
-        QSizePolicy sizePolicy_din(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        label_din->setGeometry(QRect(10, 40, 170, 15));
+        QSizePolicy sizePolicy_din(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy_din.setHorizontalStretch(0);
         sizePolicy_din.setVerticalStretch(0);
         sizePolicy_din.setHeightForWidth(label_relay->sizePolicy().hasHeightForWidth());
         label_din->setSizePolicy(sizePolicy_din);
         label_din->setLayoutDirection(Qt::RightToLeft);
-        label_din->setAlignment(Qt::AlignLeft);
+        label_din->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
         title = "Активные дискретные входы:";
         label_din->setText(QCoreApplication::translate("SR_Control", title.toUtf8(), nullptr));
         for (int j=0 ; j<8; j++)
         {
             QCheckBox *sr35d_dType = new QCheckBox(groupbox);
             sr35d_dType->setObjectName(QString::fromUtf8("dType")+QString::number(j)+QString::number(i));
-            sr35d_dType->setGeometry(QRect(235+70*j, 47, 16, 20));
+            sr35d_dType->setGeometry(QRect(187+40*j, 40, 15, 15));
             TypeList.append(sr35d_dType);
 
             QLabel *sr35d_dTypeLabel = new QLabel(groupbox);
             sr35d_dTypeLabel->setObjectName(QString::fromUtf8("dTypeLabel")+QString::number(j)+QString::number(i));
-            sr35d_dTypeLabel->setGeometry(QRect(220+70*j, 46, 16, 20));
-            QSizePolicy sizePolicydType(QSizePolicy::Preferred, QSizePolicy::Preferred);
+            sr35d_dTypeLabel->setGeometry(QRect(172+40*j, 40, 15, 15));
+            QSizePolicy sizePolicydType(QSizePolicy::Fixed, QSizePolicy::Fixed);
             sizePolicydType.setHorizontalStretch(0);
             sizePolicydType.setVerticalStretch(0);
             sizePolicydType.setHeightForWidth(sr35d_dTypeLabel->sizePolicy().hasHeightForWidth());
             sr35d_dTypeLabel->setSizePolicy(sizePolicydType);
             sr35d_dTypeLabel->setLayoutDirection(Qt::RightToLeft);
-            sr35d_dTypeLabel->setAlignment(Qt::AlignCenter);
+            sr35d_dTypeLabel->setAlignment(Qt::AlignCenter|Qt::AlignVCenter);
             sr35d_dTypeLabel->setText(QString::number(j+1));
         }
 
@@ -114,6 +114,7 @@ void SR_Control::SR_DataLoad(ComPortTransmit *comPort, bool *RequestFlag, uint8_
     pollRequestFlag = RequestFlag;
     ModuleAddress = maddress;
     DataRequest();
+    this->open();
 }
 
 

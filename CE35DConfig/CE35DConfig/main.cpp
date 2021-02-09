@@ -1,14 +1,17 @@
 #include "mainwindow.h"
 
+
 #include <QApplication>
-#include <QStyleFactory>
-#include <QFile>
 #include <QScreen>
-#include <QtWidgets>
+#include <QStyleFactory>
+
 #define default_height 768
+
 
 int main(int argc, char *argv[])
 {
+    int fontPixels=11;
+#ifdef Q_OS_WIN
     double scale = 1;
     {
         QApplication a(argc, argv);
@@ -22,22 +25,17 @@ int main(int argc, char *argv[])
 
     qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "0");
     qputenv("QT_SCREEN_SCALE_FACTORS", QString::number(scale, 'f', 3).toLocal8Bit());
-
-
-
- /*   bool EnableHighDpiScaling = false;
-
-        {
-            QApplication a(argc, argv);
-            if ( a.screens().at(0)->geometry().width() > 1090) // check somehow. DPI i assume
-                EnableHighDpiScaling = true;
-        }
-
-        QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling, EnableHighDpiScaling);
-*/
+#else
+    qputenv("QT_SCREEN_SCALE_FACTORS", "1.2");
+#endif
     QApplication a(argc, argv);
+    int swidth = 40;
+#ifdef Q_OS_WIN
     a.setStyle(QStyleFactory::create("fusion"));
-    a.setStyleSheet("QTabBar::scroller {width: 60px;}"
+    swidth = 50;
+#endif
+
+    a.setStyleSheet("QTabBar::scroller {width: "+QString::number(swidth).toLocal8Bit()+"px;}"
                     "QGroupBox {"
                         "border: 1px solid gray;"
                         "border-radius: 3px;"
@@ -48,8 +46,12 @@ int main(int argc, char *argv[])
     QFont font;
     font.setFamily("Open Sans");
     font.setWeight(QFont::Normal);
-    font.setPixelSize(11);
+    font.setPixelSize(fontPixels);
+#ifndef Q_OS_WIN
+    font.setStretch(95);
+#endif
     a.setFont (font);
+
 
     MainWindow w;
     w.show();
