@@ -252,7 +252,8 @@ Makefile: ../CE35DConfig/CE35DConfig_win32.pro C:/Qt/Qt5.14.2/5.14.2/mingw73_32/
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5SerialPort.prl \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
+		../CE35DConfig/res.qrc
 	$(QMAKE) -o Makefile ..\CE35DConfig\CE35DConfig_win32.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/spec_pre.prf:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/qdevice.pri:
@@ -437,6 +438,7 @@ C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5SerialPort.prl:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
+../CE35DConfig/res.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\CE35DConfig\CE35DConfig_win32.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

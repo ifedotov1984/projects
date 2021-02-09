@@ -67,6 +67,9 @@ FORMS += \
 TRANSLATIONS += \
     CE35DConfig_ru_RU.ts
 
+RESOURCES += \
+    res.qrc
+
 TARGET = CE35DConfig
 DESTDIR = ../CE35DConfig-bin/usr/bin
 

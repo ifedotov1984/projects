@@ -14,3 +14,6 @@ HEADERS  += line_interpol_4_20ma.h
 FORMS    += line_interpol_4_20ma.ui
 
 DESTDIR = ../line_interpol_4_20mA-bin-i386/usr/bin
+
+RESOURCES += \
+    res.qrc

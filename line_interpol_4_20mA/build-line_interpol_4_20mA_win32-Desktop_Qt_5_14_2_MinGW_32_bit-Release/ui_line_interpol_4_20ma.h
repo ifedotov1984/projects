@@ -10,6 +10,7 @@
 #define UI_LINE_INTERPOL_4_20MA_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
@@ -59,6 +60,9 @@ public:
         line_interpol_4_20mA->resize(350, 180);
         line_interpol_4_20mA->setMinimumSize(QSize(350, 180));
         line_interpol_4_20mA->setMaximumSize(QSize(350, 180));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/IMLEthernetLoader.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        line_interpol_4_20mA->setWindowIcon(icon);
         actiononData_Changed = new QAction(line_interpol_4_20mA);
         actiononData_Changed->setObjectName(QString::fromUtf8("actiononData_Changed"));
         centralwidget = new QWidget(line_interpol_4_20mA);

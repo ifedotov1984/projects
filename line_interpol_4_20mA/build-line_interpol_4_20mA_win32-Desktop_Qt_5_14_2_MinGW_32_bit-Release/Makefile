@@ -251,7 +251,8 @@ Makefile: ../line_interpol_4_20mA/line_interpol_4_20mA_win32.pro C:/Qt/Qt5.14.2/
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Gui.prl \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
+		../line_interpol_4_20mA/res.qrc
 	$(QMAKE) -o Makefile ..\line_interpol_4_20mA\line_interpol_4_20mA_win32.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/spec_pre.prf:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/qdevice.pri:
@@ -435,6 +436,7 @@ C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Gui.prl:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl:
 C:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
+../line_interpol_4_20mA/res.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\line_interpol_4_20mA\line_interpol_4_20mA_win32.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 

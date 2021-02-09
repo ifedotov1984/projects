@@ -17,13 +17,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    line_interpol_4_20ma.cpp
+    line_interpol_4_20mA.cpp
 
 HEADERS += \
-   line_interpol_4_20ma.h
+   line_interpol_4_20mA.h
 
 FORMS += \
-   line_interpol_4_20ma.ui
+   line_interpol_4_20mA.ui
+
+RESOURCES += \
+    res.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,4 +35,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RC_ICONS = iml_logo.ico
 
-DESTDIR = ../line_interpol_4_20ma-bin
+DESTDIR = ../line_interpol_4_20mA-bin

@@ -1,3 +1,4 @@
+Unicode True
 !include "MUI.nsh"
 !addplugindir "${NSISDIR}\Plugins\x86-unicode"
 

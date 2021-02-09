@@ -71,6 +71,10 @@
   <property name="windowTitle">
    <string>35D Config</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/IMLEthernetLoader.svg</normaloff>:/IMLEthernetLoader.svg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="palette">
     <palette>
@@ -9590,7 +9594,7 @@
      <x>0</x>
      <y>0</y>
      <width>399</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="addition">
@@ -9642,6 +9646,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

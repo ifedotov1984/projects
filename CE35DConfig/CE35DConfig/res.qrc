@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>IMLEthernetLoader.svg</file>
+    </qresource>
+</RCC>
