@@ -71,5 +71,5 @@ RESOURCES += \
     res.qrc
 
 TARGET = CE35DConfig
-DESTDIR = ../CE35DConfig-bin/usr/bin
+DESTDIR = ../CE35DConfig-bin-x64/usr/bin
 

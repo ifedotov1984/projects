@@ -259,7 +259,7 @@ void SVA35D_Calib::on_cWrite_clicked()
     frwr.ComAddress = ModuleAddress;
     frwr.data.clear();
     uint32_t val = (uint32_t)(ui->curr->value()*ui->mult->value());
-    frwr.data.append((char)0xC0);
+    frwr.data.append((char)0xC1);
     uint8_t bt = ((uint8_t)(val/(256*256*256)))&0x0f;
     if(ui->phase_1->checkState() == Qt::CheckState::Checked)
     {
