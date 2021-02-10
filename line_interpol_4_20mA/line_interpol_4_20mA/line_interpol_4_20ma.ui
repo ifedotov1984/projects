@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>line_interpol_4_20mA</class>
+ <widget class="QMainWindow" name="line_interpol_4_20mA">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>350</width>
+    <height>180</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>350</width>
+    <height>180</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>350</width>
+    <height>180</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>line_interpol_4_20mA</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/IMLEthernetLoader.svg</normaloff>:/IMLEthernetLoader.svg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="Y0Edit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>26</y>
+      <width>75</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Y1Edit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>55</y>
+      <width>75</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="X0Edit">
+    <property name="geometry">
+     <rect>
+      <x>185</x>
+      <y>26</y>
+      <width>75</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="X1Edit">
+    <property name="geometry">
+     <rect>
+      <x>185</x>
+      <y>55</y>
+      <width>75</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Z0Edit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>151</y>
+      <width>75</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Z1Edit">
+    <property name="geometry">
+     <rect>
+      <x>185</x>
+      <y>151</y>
+      <width>75</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>10</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="I0Box">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>105</y>
+      <width>75</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>4</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="I1Box">
+    <property name="geometry">
+     <rect>
+      <x>185</x>
+      <y>105</y>
+      <width>75</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>5</y>
+      <width>121</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Измеряемый ток, А</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>25</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>55</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>5</y>
+      <width>121</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выходной ток, mА</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Y0Box_X">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>25</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>25</y>
+      <width>15</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Y1Box_X">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>55</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>55</y>
+      <width>15</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>55</y>
+      <width>15</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="X0Box_X">
+    <property name="geometry">
+     <rect>
+      <x>275</x>
+      <y>25</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="X1Box_X">
+    <property name="geometry">
+     <rect>
+      <x>275</x>
+      <y>55</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>25</y>
+      <width>15</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>38</x>
+      <y>85</y>
+      <width>270</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Значение тока для преобразования, мА</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>130</y>
+      <width>250</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Коэффициенты для преобразования</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="ZBox_X">
+    <property name="geometry">
+     <rect>
+      <x>275</x>
+      <y>150</y>
+      <width>65</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>1000000</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>150</y>
+      <width>15</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>350</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="actiononData_Changed">
+   <property name="text">
+    <string>onData_Changed</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>Y0Edit</tabstop>
+  <tabstop>Y1Edit</tabstop>
+  <tabstop>Y0Box_X</tabstop>
+  <tabstop>Y1Box_X</tabstop>
+  <tabstop>X0Edit</tabstop>
+  <tabstop>X1Edit</tabstop>
+  <tabstop>X0Box_X</tabstop>
+  <tabstop>X1Box_X</tabstop>
+  <tabstop>I0Box</tabstop>
+  <tabstop>I1Box</tabstop>
+  <tabstop>Z0Edit</tabstop>
+  <tabstop>Z1Edit</tabstop>
+ </tabstops>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
